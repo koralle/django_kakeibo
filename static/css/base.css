@@ -1,0 +1,27 @@
+.app-header {
+  margin: 0 auto;
+  padding: 0;
+}
+
+.app-header h1 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.app-body {
+  margin: 0;
+  padding: 0;
+}
+
+.app-footer {
+  margin: 0;
+  padding: 0;
+}
+
+.app-footer p { 
+  margin: 0;
+  padding: 0;
+
+  text-align: center;
+}

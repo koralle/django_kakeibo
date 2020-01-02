@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extracss %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/balance_list.css' %}" />
+{% endblock extracss %}
+
+{% block content %}
+
+<table class= "balance-table">
+  <thead>
+    <tr>
+      <th>項目名</th>
+      <th>金額</th>
+      <th>日時</th>
+      <th>カテゴリー</th>
+      <th>収入/支出</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in balance %}
+      <tr>
+        <td>
+         <a href="{% url 'kakeibo:balance_detail' item.pk %}"> {{ item.item_name }} </a>
+        </td>
+        <td>
+          {{ item.amount }}
+        </td>
+        <td>
+          {{ item.registered_date }}
+        </td>
+        <td>
+          {{ item.category }}
+        </td>
+        <td>
+          {{ item.balance_type }}
+        </td>
+        <td> 
+          <a href="{% url 'kakeibo:balance_edit' balance_id=item.pk %}">編集</a>
+        </td>
+        <td> 
+          <a href="{% url 'kakeibo:balance_delete' balance_id=item.pk %}">削除</a>
+        </td>
+        <td>
+          <a></a>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<p><a href="{% url 'kakeibo:balance_add' %}">新規追加</a></p>
+
+{% endblock content %}

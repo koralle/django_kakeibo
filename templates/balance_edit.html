@@ -1,0 +1,42 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block extracss %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/balance_edit.css' %}" />
+{% endblock extracss %}
+{% block content %}
+  <h1>Create New Item</h1>
+
+  <table class = "form-table">
+    <form method="POST" class="app-form" action="">
+    {% csrf_token %}
+
+    <tbody>
+      <tr>
+        <th>タイトル</th>
+        <td>{{ form.item_name }}</td>
+      </tr>
+      <tr>
+        <th>金額</th>
+        <td>{{ form.amount }}</td>
+      </tr>
+      <tr>
+        <th>日時</th>
+        <td>{{ form.registered_date }}</td>
+      </tr>
+      <tr>
+        <th>カテゴリ</th>
+        <td>{{ form.category }}</td>
+      </tr>
+      <tr>
+        <th>収支タイプ</th>
+        <td>{{ form.balance_type }}</td>
+      </tr>
+    </tbody>  
+
+    <button type="submit"> 追加 </button>
+    </form>
+  </table>
+<a href="{% url 'kakeibo:balance_list' %}">戻る</a>
+
+{% endblock content %}
