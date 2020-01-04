@@ -3,3 +3,8 @@
   padding: 0;
   margin: 0 auto;
 }
+
+.item-edit, .item-delete {
+  color: white;
+  text-decoration: none;
+}

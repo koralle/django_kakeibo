@@ -8,6 +8,9 @@ import logging
 from django.conf import settings
 import os
 
+def about(request):
+  return render(request, template_name="about.html")
+
 class BalanceList(ListView):
   context_object_name = 'balance'
   template_name = 'balance_list.html'

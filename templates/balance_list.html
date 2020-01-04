@@ -36,10 +36,18 @@
           {{ item.balance_type }}
         </td>
         <td> 
-          <a href="{% url 'kakeibo:balance_edit' balance_id=item.pk %}">編集</a>
+            <a href="{% url 'kakeibo:balance_edit' balance_id=item.pk %}"
+              class = "btn btn-secondary"
+            >
+              編集
+            </a>
         </td>
         <td> 
-          <a href="{% url 'kakeibo:balance_delete' balance_id=item.pk %}">削除</a>
+            <a href="{% url 'kakeibo:balance_delete' balance_id=item.pk %}"
+               class = "btn btn-danger"
+            >
+              削除
+            </a>
         </td>
         <td>
           <a></a>
