@@ -5,33 +5,69 @@
   <link rel="stylesheet" type="text/css" href="{% static 'css/balance_edit.css' %}" />
 {% endblock extracss %}
 {% block content %}
-  <h1>Create New Item</h1>
 
   <form method="POST" class="app-form" action="">
   <table class = "form-table">
     {% csrf_token %}
 
     <tbody>
-      <tr>
-        <th>タイトル</th>
-        <td>{{ form.item_name }}</td>
-      </tr>
-      <tr>
-        <th>金額</th>
-        <td>{{ form.amount }}</td>
-      </tr>
-      <tr>
-        <th>日時</th>
-        <td>{{ form.registered_date }}</td>
-      </tr>
-      <tr>
-        <th>カテゴリ</th>
-        <td>{{ form.category }}</td>
-      </tr>
-      <tr>
-        <th>収支タイプ</th>
-        <td>{{ form.balance_type }}</td>
-      </tr>
+      <div>
+        <label for="id_item_name">タイトル</label>
+        <div>
+          <input type="text" name="item_name" 
+            maxlength="100" required="" id="id_item_name"
+            class = "form-control" placeholder="Title"
+          >
+        </div>
+      </div>
+      <div>
+        <label for="id_amount">金額</label>
+        <div>
+          <input type="number" name="amount" 
+            value="0" required="" id="id_amount"
+            class = "form-control" placeholder="Amount"
+          >
+        </div>
+      </div>
+      <div>
+        <label for="id_registered_date">日時</label>
+        <div>
+          <input type="text" name="registered_date" 
+            required="" id="id_registered_date"
+            class = "form-control" placeholder="YYYY-MM-DD"
+          >
+        </div>
+      </div>
+      <div>
+        <label for="id_category">カテゴリ</th>
+        <select name="category" required="" id="id_category"
+          class="custom-select"
+        >
+          <option selected disabled value="">---------</option>
+          <option value="給与所得">給与所得</option>
+          <option value="食費">食費</option>
+          <option value="水道代">水道代</option>
+          <option value="ガス代">ガス代</option>
+          <option value="電気代">電気代</option>
+          <option value="携帯代">携帯代</option>
+          <option value="ガチャ課金">ガチャ課金</option>
+          <option value="通信費">通信費</option>
+          <option value="交際費">交際費</option>
+          <option value="交通費">交通費</option>
+          <option value="家賃">家賃</option>
+          <option value="その他">その他</option>
+        </select>
+      </div>
+      <div>
+        <label for="id_balance_type">収支タイプ</label>
+        <select name="balance_type" required="" id="id_balance_type"
+          class = "custom-select"
+        >
+          <option value="" disabled selected >---------</option>
+          <option value="収入">収入</option>
+          <option value="支出">支出</option>
+        </select>
+      </div>
     </tbody>  
 
   </table>

@@ -12,5 +12,10 @@
 >
   編集
 </a>
+<a href="{% url 'kakeibo:balance_delete' balance_id=balance.pk %}"
+  class = "btn btn-danger"
+>
+  削除
+</a>
 <a href="{% url 'kakeibo:balance_list' %}">戻る</a>
 {% endblock content %}
