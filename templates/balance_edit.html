@@ -7,8 +7,8 @@
 {% block content %}
   <h1>Create New Item</h1>
 
+  <form method="POST" class="app-form" action="">
   <table class = "form-table">
-    <form method="POST" class="app-form" action="">
     {% csrf_token %}
 
     <tbody>
@@ -34,9 +34,11 @@
       </tr>
     </tbody>  
 
-    <button type="submit"> 追加 </button>
-    </form>
   </table>
+    <button type="submit" class="btn btn-primary">
+      追加
+    </button>
+  </form>
 <a href="{% url 'kakeibo:balance_list' %}">戻る</a>
 
 {% endblock content %}

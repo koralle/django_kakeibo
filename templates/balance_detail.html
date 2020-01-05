@@ -7,6 +7,10 @@
 <p>{{ balance.category }}</p>
 <p>{{ balance.balance_type }}</p>
 
-<a href="{% url 'kakeibo:balance_edit' balance_id=balance.pk %}">編集</a>
+<a href="{% url 'kakeibo:balance_edit' balance_id=balance.pk %}"
+  class="btn btn-secondary"
+>
+  編集
+</a>
 <a href="{% url 'kakeibo:balance_list' %}">戻る</a>
 {% endblock content %}
